@@ -87,7 +87,6 @@ def hamming(inicialState, goalstate):
             sum += 1
     return sum + depth
 
-
 def manhattan(inicialState, goalstate):
     inicial = inicialState.estado
     goal = goalstate.estado
@@ -104,10 +103,9 @@ def manhattan(inicialState, goalstate):
                 break
     return sum + depth
 
+#Algoritmos de Pesquisa
 
-# Algoritmos de Pesquisa
-
-# Breadth-first search
+# Busca em Largura
 def bfs(inicialState, goalstate):
     total_nos = 1
     fronteira = deque()
@@ -124,7 +122,7 @@ def bfs(inicialState, goalstate):
         del(state);
     return False, total_nos
 
-# Depth-first search
+# Busca em Profundidade
 def dfs(inicialState, goalstate, depth):
     total_nos = 1
     fronteira = list()
@@ -146,19 +144,7 @@ def dfs(inicialState, goalstate, depth):
         del(state)
     return False, total_nos
 
-# Iteractive Depth-first search
-def idfs(inicialState, goalstate):
-    total_nos = 1
-    i = 1
-    moves, nodes = dfs(inicialState, goalstate, i)
-    total_nos += nodes
-    while not moves:
-        i += 1
-        moves, nodes = dfs(inicialState, goalstate, i)
-        total_nos += nodes
-    return moves, total_nos
-
-# Greedy
+# Busca Gulosa
 def guloso(inicialState, goalstate, comparador):
     total_nos = 1
     print("\nkedia3\n")
@@ -177,7 +163,7 @@ def guloso(inicialState, goalstate, comparador):
     print("\nkedia5\n")
     return state.backtrack, total_nos
 
-# A*
+# Busca A*
 def astar(inicialState, goalstate, comparador):
     total_nos = 1
     fronteira = MinHeap(goalstate, comparador)
