@@ -53,7 +53,7 @@ def main():
         print('Invalid boards.')
         sys.exit(1)
 
-    if args.astar is None and not args.bfs and args.dfs is None and not args.idfs and args.greedy is None:
+    if args.astar is None and not args.bfs and args.dfs is None and args.greedy is None:
         sys.stderr.write("Provide a valid input.")
 
         #Busca em Largura
