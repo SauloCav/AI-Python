@@ -92,7 +92,7 @@ def main():
             print("No solution found.")
         print("\n")
 
-        '''#Busca Gulosa
+        #Busca Gulosa
         print("Greedy search:")
         comp = manhattan
         print("\nkedia1\n")
@@ -106,7 +106,7 @@ def main():
             print("Path to goal:")
             print(" -> ".join(moves))
         else:
-            print("No solution found.")'''
+            print("No solution found.")
 
         sys.exit(1)
 
