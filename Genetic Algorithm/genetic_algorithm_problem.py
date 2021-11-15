@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 from random import randint
-from string import maketrans
 
 class AlgoritmoGenetico():
 
@@ -51,7 +50,7 @@ class AlgoritmoGenetico():
 
     def selecionar(self):
 
-        participantes_torneio = zip(self.populacao, self.avaliacao)
+        participantes_torneio = list(zip(self.populacao, self.avaliacao))
         individuo_1 = participantes_torneio[randint(0, self.tam_populacao - 1)]
         individuo_2 = participantes_torneio[randint(0, self.tam_populacao - 1)]
 
@@ -86,7 +85,7 @@ class AlgoritmoGenetico():
 
     def mutar(self, individuo):
 
-        tabela_mutacao = maketrans('+-01', '-+10')
+        tabela_mutacao = str.maketrans('+-01', '-+10')
 
         if randint(1,100) <= self.taxa_mutacao:
             bit = randint(0, self.num_bits - 1)
@@ -96,14 +95,14 @@ class AlgoritmoGenetico():
 
     def econtrar_filho_mais_apto(self):
        
-        candidatos = zip(self.populacao, self.avaliacao)
+        candidatos = list(zip(self.populacao, self.avaliacao))
 
-        return max(candidatos, key=lambda elemento: elemento[1])
+        return min(candidatos, key=lambda elemento: elemento[1])
 
 
 def main():
 
-    algoritmo_genetico = AlgoritmoGenetico(-10, 10, 30, 1, 70, 50)
+    algoritmo_genetico = AlgoritmoGenetico(-10, 10, 4, 1, 60, 5)
 
     algoritmo_genetico.avaliar()
 
