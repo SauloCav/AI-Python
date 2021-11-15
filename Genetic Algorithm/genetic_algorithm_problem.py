@@ -3,7 +3,7 @@
 
 from random import randint
 
-class AlgoritmoGenetico():
+class Genetic_Algorithm():
 
     def __init__(self, x_min, x_max, tam_populacao, taxa_mutacao, taxa_crossover, num_geracoes):
        
@@ -102,7 +102,7 @@ class AlgoritmoGenetico():
 
 def main():
 
-    algoritmo_genetico = AlgoritmoGenetico(-10, 10, 4, 1, 60, 5)
+    algoritmo_genetico = Genetic_Algorithm(-10, 10, 4, 1, 60, 5)
 
     algoritmo_genetico.avaliar()
 
