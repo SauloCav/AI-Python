@@ -1,12 +1,8 @@
-#! /usr/bin/env python3
-# -*- coding: utf-8 -*-
-
 from nltk import WordNetLemmatizer, FreqDist, sent_tokenize, word_tokenize, pos_tag
 from cmath import log
 from nltk.corpus import stopwords, gutenberg
 
 texts = [ "austen-emma.txt", "carroll-alice.txt", "melville-moby_dick.txt", "shakespeare-caesar.txt", "shakespeare-hamlet.txt", ]
-
 dict = { "NN": "n", "VB": "v", "JJ": "a", "RB": "r", }
 
 def penn2wordnet(penn_tag):
