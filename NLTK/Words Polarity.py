@@ -1,6 +1,3 @@
-#! /usr/bin/env python3
-# -*- coding: utf-8 -*-
-
 import pandas as pd
 import numpy as np
 from textblob import TextBlob, Word, Blobber
@@ -11,6 +8,7 @@ t=file.read();
 text = TextBlob(t)
 print(text.sentiment)
 
+print('\n')
 print('\n')
 
 print("positive_words.csv: ")
